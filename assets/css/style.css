@@ -1,0 +1,90 @@
+/* Reset CSS đơn giản nhất */
+/* * select tất cả các thẻ trong html */
+
+*{
+    padding: 0;
+    margin: 0;
+    /* Loại bỏ tính toán kích thước khi có border hoặc padding */
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Tổng quan đến chi tiết
+*/
+
+
+/*
+1.Vị trí
+2. Kích thước (width, height)
+3. Màu sắc
+4. Kiểu dáng (kiểu chữ, hình tròn, vuông,...)*/
+#main {
+
+}
+
+#header {
+    height: 46px;
+    background-color: black;
+}
+
+#nav, .subnav{
+    list-style-type: none;
+}
+
+#nav > li{
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+/* li là con trực tiếp của thẻ nav và thẻ a là con trực tiếp của li */
+#nav > li > a {
+    color: white; 
+    text-transform: uppercase;  
+}
+
+#nav li a {
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: block;
+}
+
+#nav .subnav li:hover a,
+#nav > li:hover > a {
+    color: black;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    /* display: none; */
+    position: absolute;
+    background-color: #fff;
+}
+
+#nav .subnav a {
+    color: black;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#slider {
+    min-height: 500px;
+    background-color: #333;
+}
+
+#content {
+
+}
+
+#footer {
+
+}
