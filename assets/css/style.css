@@ -24,13 +24,31 @@ html{
 2. Kích thước (width, height)
 3. Màu sắc
 4. Kiểu dáng (kiểu chữ, hình tròn, vuông,...)*/
+.clear{
+    clear: both;
+}
+
+.text-pink{
+    color: #F1A8BD !important;
+}
+
 #main {
 
 }
 
 #header {
+    position: fixed;
+    /* Thêm top vào cho chắc */
+    top: 0;
+    left: 0;
+    right: 0;
     height: 46px;
     background-color: black;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
 }
 
 #nav, .subnav{
@@ -47,7 +65,7 @@ html{
 
 /* li là con trực tiếp của thẻ nav và thẻ a là con trực tiếp của li */
 #nav > li > a {
-    color: white; 
+    color: #EEAABF; 
     text-transform: uppercase;  
 }
 
@@ -61,30 +79,233 @@ html{
 #nav .subnav li:hover a,
 #nav > li:hover > a {
     color: black;
-    background-color: #ccc;
+    background-color: #EEAABF;
+}
+
+#nav li:hover .subnav{
+    display: block;
 }
 
 #nav .subnav {
-    /* display: none; */
+    display: none;
+    min-width: 160px;
     position: absolute;
-    background-color: #fff;
+    /* Thêm top và left để chắc chắn */
+    top: 100%;
+    left: 0;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 #nav .subnav a {
-    color: black;
+    color: #EEAABF;
     padding: 0 12px;
     line-height: 38px;
 }
 
+#nav .nav-arrow-down{
+    font-size: 14px;
+}
+
+#header .search-btn{
+    float: right;
+    padding: 0 21px;
+}
+
+#header .search-btn:hover{
+    cursor: pointer;
+    background-color: #EEAABF;
+}
+
+#header .search-icon{
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 46px;
+}
+
 #slider {
-    min-height: 500px;
-    background-color: #333;
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url(/assets/img/slider/slider1.jpg) top center / cover no-repeat;
+}
+
+#slider .text-content{
+    position: absolute;
+    bottom: 47px;
+    color: white;
+    /* Cách 1 căn giữa 
+    left: 50%;
+    transform: translateX(-50%); */
+     /* Cách 2 căn giữa
+    width: 100%; */
+    width: 100%;
+    /* Cách 3 căn giữa
+    right: 0;
+    left: 0; */
+    text-align: center;
+}
+
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-description{
+    font-size: 15px;
+    margin-top: 25px;
 }
 
 #content {
 
 }
 
+#content .content-section {
+    width: 800px;
+    padding: 64px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content .section-heading{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 25px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#content .about-text{
+    font-size: 15px;
+    margin-top: 15px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .member-list{
+    margin-top: 48px;
+    /* 1 cách để giải quyết float 
+    overflow: hidden; */
+}
+
+#content .member-item{
+    float: left;
+    width: calc(100% / 4);
+    text-align: center;
+}
+
+#content .member-name{
+    font-size: 15px;
+}
+
+#content .member-img{
+    width: 154px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+/* Tour section */
+.tour-section{
+    background-color: black;
+}
+
+.tickets-list{
+    background-color: #F1A8BD;
+    margin-top: 40px;
+    list-style-type: none;
+}
+
+.tickets-list li{
+    color: black;
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #000;
+}
+
+.tickets-list .sold-out{
+    background-color: black;
+    color: #F1A8BD;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.tickets-list .quantity{
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    color: #F1A8BD;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -3px;
+}
+
+/* Places */
+.places-list {
+    margin: 32px -8px 48px;
+}
+
+.place-item {
+    float: left;
+    width: calc(100% / 3);
+    padding: 0 8px;
+}
+
+.place-img {
+    width: 100%;
+    display: block;
+}
+
+.place-img:hover {
+    opacity: 0.6;
+}
+
+.place-body {
+    padding: 16px;
+    font-size: 15px;
+    background-color: white;
+}
+
+.place-heading {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.place-time {
+    margin-top: 15px;
+    color: #757575;
+}
+
+.place-desc {
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.place-buy-btn {
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.place-buy-btn:hover{
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/* Footer section */
 #footer {
 
 }
